@@ -515,88 +515,6 @@
       font-style: italic;
     }
 
-    /* SWEEPER MUSIM SEMI JEPANG (JAPANESE SPRING FINALE) */
-    #japanSpringFinale {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: radial-gradient(circle, #2d1124 0%, #0d030b 100%);
-      z-index: 999999;
-      display: none;
-      opacity: 0;
-      transition: opacity 2.5s ease-in-out;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding: 20px;
-    }
-
-    #japanSpringFinale.active {
-      display: flex;
-      opacity: 1;
-    }
-
-    /* Bingkai Bunga Sakura di KELILING Layar */
-    .sakura-frame-corner {
-      position: absolute;
-      pointer-events: none;
-      z-index: 100;
-      font-size: 2.8rem;
-      filter: drop-shadow(0 0 12px rgba(255, 182, 193, 0.8));
-      line-height: 1;
-      animation: floralGlow 3s infinite alternate ease-in-out;
-    }
-
-    .corner-top-left { top: -10px; left: -10px; transform: rotate(-15deg); }
-    .corner-top-right { top: -10px; right: -10px; transform: rotate(15deg) scaleX(-1); }
-    .corner-bottom-left { bottom: -10px; left: -10px; transform: rotate(190deg); }
-    .corner-bottom-right { bottom: -10px; right: -10px; transform: rotate(-190deg) scaleX(-1); }
-
-    .sakura-border-top { top: 5px; left: 50%; transform: translateX(-50%); font-size: 2.2rem; }
-    .sakura-border-bottom { bottom: 5px; left: 50%; transform: translateX(-50%); font-size: 2.2rem; }
-    .sakura-border-left { top: 50%; left: 5px; transform: translateY(-50%); font-size: 2.2rem; display: flex; flex-direction: column; gap: 15px; }
-    .sakura-border-right { top: 50%; right: 5px; transform: translateY(-50%); font-size: 2.2rem; display: flex; flex-direction: column; gap: 15px; }
-
-    /* Container Foto Pasangan */
-    .couple-photo-wrapper {
-      position: relative;
-      z-index: 50;
-      max-width: 330px;
-      width: 88%;
-      border-radius: 30px;
-      padding: 10px;
-      background: linear-gradient(135deg, #ffb6c1, #ff7b9c, #ffffff);
-      box-shadow: 0 0 45px rgba(255, 123, 156, 0.7), 0 0 90px rgba(255, 182, 193, 0.4);
-      animation: photoFloat 4s ease-in-out infinite alternate;
-      opacity: 0;
-      transform: scale(0.85);
-      transition: all 2s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    .couple-photo-wrapper.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .couple-photo-wrapper img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      border-radius: 22px;
-      display: block;
-      border: 3px solid #ffffff;
-    }
-
-    .couple-photo-caption {
-      text-align: center;
-      margin-top: 15px;
-      font-family: 'Sacramento', cursive;
-      font-size: 2.2rem;
-      color: #ffc2d1;
-      text-shadow: 0 0 10px rgba(255, 123, 156, 0.8);
-    }
-
     /* Modal Zoom Foto */
     .modal {
       display: none;
@@ -636,16 +554,6 @@
     @keyframes bounce { from { transform: translateY(0px); } to { transform: translateY(-10px); } }
     @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-    
-    @keyframes floralGlow {
-      0% { filter: drop-shadow(0 0 8px rgba(255, 182, 193, 0.6)); }
-      100% { filter: drop-shadow(0 0 18px rgba(255, 105, 180, 0.9)); }
-    }
-
-    @keyframes photoFloat {
-      0% { transform: translateY(0px) rotate(0deg); }
-      100% { transform: translateY(-12px) rotate(1deg); }
-    }
   </style>
 </head>
 <body>
@@ -667,31 +575,6 @@
       <div id="textStep3" class="fade-text" style="font-size: 1.4rem; font-weight: 700; color: #ff7b9c;">
         i love you ❤️
       </div>
-    </div>
-  </div>
-
-  <!-- FINALE KHUSUS: MUSIM SEMI JEPANG & FOTO BERDUA -->
-  <div id="japanSpringFinale">
-    <!-- Frame Sakura Atas, Bawah, Kiri, Kanan -->
-    <div class="sakura-frame-corner corner-top-left">🌸🍃🌸</div>
-    <div class="sakura-frame-corner corner-top-right">🌸🍃🌸</div>
-    <div class="sakura-frame-corner corner-bottom-left">🌸🍃🌸</div>
-    <div class="sakura-frame-corner corner-bottom-right">🌸🍃🌸</div>
-
-    <div class="sakura-frame-corner sakura-border-top">🌸 🍃 🌸 🍃 🌸</div>
-    <div class="sakura-frame-corner sakura-border-bottom">🌸 🍃 🌸 🍃 🌸</div>
-    
-    <div class="sakura-frame-corner sakura-border-left">
-      <span>🌸</span><span>🍃</span><span>🌸</span>
-    </div>
-    <div class="sakura-frame-corner sakura-border-right">
-      <span>🌸</span><span>🍃</span><span>🌸</span>
-    </div>
-
-    <!-- Container Foto Utama -->
-    <div class="couple-photo-wrapper" id="couplePhotoCard">
-      <img src="assets/images/us.jpg" alt="Foto Kita Berdua" />
-      <div class="couple-photo-caption">Forever & Always 🌸🤍</div>
     </div>
   </div>
 
@@ -918,7 +801,7 @@
       <!-- DUA TOMBOL: IYA DAN MENGHINDAR -->
       <div id="finalAction" style="display:none; margin-top: 25px; position:relative; z-index:10;">
         <p style="font-size:0.95rem; color:#ffd1dc; margin-bottom:15px; font-family:'Mali', cursive;">
-          🤍 Pertanyaan Terakhir<br>"kamu bersedia jika aku lamar tahun ini? 🤍"
+          🤍 Pertanyaan Terakhir<br>"kamu berdia jika aku lamar tahun ini? 🤍"
         </p>
         <div style="display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; position: relative; min-height: 80px; width: 100%;">
           <button class="btn" onclick="finishStory()">❤️ Iya, Aku Mau ❤️</button>
@@ -1134,6 +1017,7 @@
     }
 
     // ALUR PESAN LAMARAN DENGAN EFEK KETIK REAL-TIME
+// ALUR PESAN LAMARAN DENGAN EFEK KETIK REAL-TIME (FIXED TAG ERROR)
     function goToProposalPage() {
       petalSymbols = ['💍', '✨', '💖', '🤍', '💎', '❤️'];
 
@@ -1153,7 +1037,7 @@
         "untuk menyampaikan niat baik aku kepada -",
         "kedua orangtua kamu dan meminta restu mereka.",
         "aku pengen melangkah ke hubungan yang lebih serius.",
-        "Aku mau melamar kamu. ❤️"
+        "Aku mau melamar kamu. ❤️" // Teks polos tanpa tag HTML
       ];
 
       setTimeout(() => {
@@ -1178,28 +1062,6 @@
       btn.style.top = randomY + 'px';
     }
 
-    // FUNGSI EFEK AKHIR MUSIM SEMI JEPANG
-    function triggerJapanSpringFinale() {
-      petalSymbols = ['🌸', '🍃', '🌸', '✨', '💖'];
-
-      const japanOverlay = document.getElementById('japanSpringFinale');
-      japanOverlay.classList.add('active');
-
-      // Ledakan Confetti Bunga Sakura
-      confetti({
-        particleCount: 150,
-        spread: 120,
-        origin: { y: 0.5 },
-        colors: ['#ffb6c1', '#ff7b9c', '#ffffff', '#ffd1dc']
-      });
-
-      // Munculkan Foto Berdua dengan Efek Smooth Zoom
-      setTimeout(() => {
-        const card = document.getElementById('couplePhotoCard');
-        card.classList.add('show');
-      }, 800);
-    }
-
     // FUNGSI ENDING UTAMA
     function finishStory() {
       playPopSound();
@@ -1211,9 +1073,12 @@
       music.loop = false;
       music.volume = 1.0;
 
-      // Deteksi Saat Lagu Ke-2 Selesai Diputar -> Transisi ke Musim Semi Jepang & Foto Berdua
+      // Deteksi Saat Lagu Ke-2 Selesai Diputar (Layar Menjadi Blank Hitam)
       music.onended = function() {
-        triggerJapanSpringFinale();
+        const t3 = document.getElementById('textStep3');
+        if (t3) {
+          t3.style.opacity = '0';
+        }
       };
 
       music.play().catch(() => {});
@@ -1256,17 +1121,9 @@
             setTimeout(() => {
               t2.style.opacity = '0';
 
-              // Jeda 1 detik lalu Kalimat 3 Fade In
+              // Jeda 1 detik lalu Kalimat 3 Fade In (Menetap sampai lagu 1m 35s habis)
               setTimeout(() => {
                 t3.style.opacity = '1';
-
-                // Setelah kata "i love you ❤️" tampil sebentar, transisi ke tampilan Musim Semi
-                setTimeout(() => {
-                  t3.style.opacity = '0';
-                  // Jika lagu belum habis tapi ingin langsung memicu efek foto, panggil di sini
-                  // triggerJapanSpringFinale();
-                }, 4000);
-
               }, 1000);
 
             }, 5000); // Durasi Kalimat 2 (5 Detik)
